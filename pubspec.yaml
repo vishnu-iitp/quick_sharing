@@ -81,6 +81,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  
+  # MSIX package for Windows installer
+  msix: ^3.16.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -123,3 +126,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+# MSIX Configuration for Windows Installer
+msix_config:
+  display_name: Quick Sharing
+  publisher_display_name: Vishnu
+  identity_name: com.vishnu.quicksharing
+  publisher: CN=Vishnu
+  msix_version: 1.0.0.0
+  logo_path: web/icons/Icon-192.png
+  capabilities: internetClient, privateNetworkClientServer
+  languages: en-us
+  install_certificate: false
