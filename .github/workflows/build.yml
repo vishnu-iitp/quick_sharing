@@ -13,7 +13,7 @@ jobs:
   build-windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -31,19 +31,19 @@ jobs:
         run: Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath quick_sharing_windows.zip
       
       - name: Upload Windows ZIP
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quick_sharing_windows_zip
           path: quick_sharing_windows.zip
       
       - name: Upload Windows Executable
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quick_sharing_windows_exe
           path: build/windows/x64/runner/Release/quick_sharing.exe
       
       - name: Upload Windows Bundle
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quick_sharing_windows_bundle
           path: build/windows/x64/runner/Release/
@@ -51,10 +51,10 @@ jobs:
   build-android:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -72,7 +72,7 @@ jobs:
         run: flutter build apk --release
       
       - name: Upload Android APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quick_sharing_android
           path: build/app/outputs/flutter-apk/app-release.apk
@@ -80,7 +80,7 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Install Linux dependencies
         run: |
@@ -103,7 +103,7 @@ jobs:
         run: tar -czvf quick_sharing_linux.tar.gz -C build/linux/x64/release/bundle .
       
       - name: Upload Linux Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quick_sharing_linux
           path: quick_sharing_linux.tar.gz
@@ -115,19 +115,19 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Download Windows ZIP
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: quick_sharing_windows_zip
           path: ./artifacts
       
       - name: Download Android APK
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: quick_sharing_android
           path: ./artifacts
       
       - name: Download Linux Archive
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: quick_sharing_linux
           path: ./artifacts
