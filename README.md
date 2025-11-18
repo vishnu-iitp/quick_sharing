@@ -25,7 +25,19 @@ A high-performance, cross-platform Flutter application for seamless file sharing
 - ✅ **Windows** (Windows 10+)
 - ✅ **Linux** (Ubuntu 20.04+, Fedora, etc.)
 
-## 📋 Prerequisites
+## � Download Pre-built Binaries
+
+Download the latest release from the [Releases page](https://github.com/vishnu-iitp/quick_sharing/releases):
+
+- **Windows**: 
+  - `quick_sharing.msix` - Installer with Start Menu integration ([Installation Guide](WINDOWS_INSTALL.md))
+  - `quick_sharing_windows_portable.zip` - Portable version (no installation)
+- **Android**: `app-release.apk` - Android APK (enable "Unknown sources")
+- **Linux**: `quick_sharing_linux.tar.gz` - Extract and run
+
+> **Windows Users**: See [WINDOWS_INSTALL.md](WINDOWS_INSTALL.md) for detailed installation instructions for the MSIX package.
+
+## �📋 Prerequisites (For Development)
 
 - Flutter SDK 3.9.2 or higher
 - Dart SDK 3.9.2 or higher
